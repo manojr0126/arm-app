@@ -5,10 +5,10 @@ var app = express();
 const port = process.env.PORT || '8080';
 
 app.set('port', port);
-app.use(express.static(__dirname + '/dist/arm-app'));
+app.use(express.static(__dirname + '/dist'));
 app.get('/*', function(req, res) {
     res.set('Content-Type', 'text/html')
-        .sendFile(path.join(__dirname + '/dist/arm-app/index.html'))
+        .sendFile(path.join(__dirname + '/index.html'))
 });
 
 app.listen(app.get('port'), function() {
