@@ -22,7 +22,7 @@ var express = require('express');
 var app = express();
 var http = require('http');
 
-var port = process.env.PORT || '80';
+var port = process.env.PORT || '3000';
 
 app.set('port', port);
 
