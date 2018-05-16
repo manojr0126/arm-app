@@ -2,10 +2,10 @@ var express = require('express');
 var path = require('path');
 var app = express();
 
-app.use(express.static(__dirname + '/dist'));
+//app.use(express.static(__dirname + '/dist'));
 app.listen(process.env.PORT);
 
-/*const port = process.env.PORT || '8080';
+const port = process.env.PORT;
 
 app.set('port', port);
 app.use(express.static(__dirname + '/dist'));
@@ -16,4 +16,4 @@ app.get('/*', function(req, res) {
 
 app.listen(app.get('port'), function() {
     console.log("Node app is running at localhost" + app.get('port'))
-});*/
+});
