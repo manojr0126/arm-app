@@ -1,4 +1,4 @@
-var express = require('express');
+/*var express = require('express');
 var path = require('path');
 var app = express();
 
@@ -16,4 +16,17 @@ app.get('/*', function(req, res) {
 
 app.listen(app.get('port'), function() {
     console.log("Node app is running at localhost - " + app.get('port'))
+});*/
+
+var app = require('express');
+var http = require('http');
+
+var port = process.env.PORT || '80';
+
+app.set('port', port);
+
+var server = http.createServer(app);
+
+server.listen(port, function () {
+    console.log('Server running at http://localhost:' + port);
 });
