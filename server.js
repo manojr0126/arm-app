@@ -36,6 +36,18 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 8080
 
-express()
+/*express()
   .get('/', (req, res) => res.render('src/index.html'))
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))*/
+
+var app = express();
+
+/* GET home page. */
+app.get('/', function(req, res, next) {
+    //Path to your main file
+    res.status(200).sendFile(path.join(__dirname + '../src/index.html')); 
+  });
+
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+console.log('Directory name: ' + __dirname)
