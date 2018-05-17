@@ -37,8 +37,5 @@ const path = require('path')
 const PORT = process.env.PORT || 8080
 
 express()
-  .use(express.static(path.join(__dirname, 'src/assets')))
-  .set('views', path.join(__dirname, 'src/app'))
-  .set('view engine', 'html')
-  .get('/', (req, res) => res.render('src/index'))
+  .get('/', (req, res) => res.render('src/index.html'))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
