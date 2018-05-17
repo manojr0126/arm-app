@@ -43,11 +43,14 @@ const PORT = process.env.PORT || 8080
 var app = express();
 
 /* GET home page. */
-app.get('/', function(req, res, next) {
+/*app.get('/', function(req, res, next) {
     //Path to your main file
-    res.status(200).sendFile(path.join(__dirname + '../src/index.html')); 
+    res.status(200).sendFile(path.join(__dirname + '/dist/arm-app/index.html')); 
   });
 
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
-console.log('Directory name: ' + __dirname)
+console.log('Directory name: ' + __dirname)*/
+
+app.use(express.static(__dirname + '/dist/arm-app'));
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
