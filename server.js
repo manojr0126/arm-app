@@ -18,7 +18,7 @@ app.listen(app.get('port'), function() {
     console.log("Node app is running at localhost - " + app.get('port'))
 });*/
 
-var express = require('express');
+/*var express = require('express');
 var app = express();
 var http = require('http');
 
@@ -30,4 +30,15 @@ var server = http.createServer(app);
 
 server.listen(port, function () {
     console.log('Server running at http://localhost:' + port);
-});
+});*/
+
+const express = require('express')
+const path = require('path')
+const PORT = process.env.PORT || 5000
+
+express()
+  .use(express.static(path.join(__dirname, 'src/assets')))
+  .set('views', path.join(__dirname, 'src/app'))
+  .set('view engine', 'ejs')
+  .get('/', (req, res) => res.render('src/index'))
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
